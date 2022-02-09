@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="jumbotron">
+    <h1>
+      Curated list of writeups for machines I've 0nw3d on HacktheBox, Proving Grounds, Vulnhub, or other similar places.
+    </h1> 
+  </div>
+  <br>
+  <ul class="list-group">
+    <% writeups.forEach(function(writeup) { %>
+      <li class="list-group-item">
+        <strong>
+          <a href="/writeupgen?t=<%= writeup.title %>" class="link-primary"><%= writeup.title %></a>
+        </strong>
+        <br>
+        Author: <%= writeup.author %> |
+        Date: <%= writeup.date %>
+        <br>
+        Tags: <%= writeup.tags %> 
+        <br>
+        Description: <%= writeup.descript %>
+      </li>
+    <% }); %>
+  </ul>
+  
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

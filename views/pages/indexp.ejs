@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="jumbotron">
+    <h1>
+      Projects and experiments.
+    </h1> 
+  </div>
+  <br>
+  <ul class="list-group">
+    <% projects.forEach(function(project) { %>
+      <li class="list-group-item">
+        <strong>
+          <a href="/projectgen?t=<%= project.title %>" class="link-primary"><%= project.title %></a>
+        </strong>
+        <br>
+        Author: <%= project.author %> |
+        Date: <%= project.date %>
+        <br>
+        Tags: <%= project.tags %>
+        <br>
+        Description: <%= project.descript %>
+      </li>
+    <% }); %>
+  </ul>
+  
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

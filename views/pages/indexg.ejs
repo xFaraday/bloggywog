@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="jumbotron">
+    <h1>
+      My rants or exploration of random topics.
+    </h1> 
+  </div>
+  <br>
+  <ul class="list-group">
+    <% generals.forEach(function(general) { %>
+      <li class="list-group-item">
+        <strong>
+          <a href="/generalgen?t=<%= general.title %>" class="link-primary"><%= general.title %></a>
+        </strong>
+        <br>
+        Author: <%= general.author %> |
+        Date: <%= general.date %>
+        <br>
+        Tags: <%= general.tags %> 
+        <br>
+        Description: <%= general.descript %>
+      </li>
+    <% }); %>
+  </ul>
+  
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

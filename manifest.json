@@ -1,0 +1,57 @@
+{
+    "directory": {
+        "topics":{
+            "general":[
+                {
+                    "title": "The_Struggle_of_resilent_Piplines",
+                    "descript":"My experience attempting to build reliable deployment pipelines for ESXi",
+                    "author":"xfaraday",
+                    "pathtodir": "/pipelines/piplines.md",
+                    "date": "2-25-2022",
+                    "tags": [
+                        "VSphere",
+                        "pipelines",
+                        "DevOps"
+                    ]
+                }
+            ],
+            "writeups":[
+                {
+                    "title": "Symfonos",
+                    "descript":"Symfonos walkthrough from vulnhub",
+                    "author":"xfaraday",
+                    "pathtodir": "/symfonos/symfonos.md",
+                    "date": "11-12-2021",
+                    "tags": [
+                        "vulnhub",
+                        "OSCP"
+                    ]
+                },
+                {
+                    "title": "yaboi",
+                    "descript":"yaboi walkthrough from hackthebox",
+                    "author":"xfaraday",
+                    "pathtodir": "/yaboi/yaboi.md",
+                    "date": "2-13-2022",
+                    "tags": [
+                        "HTB",
+                        "OSCP"
+                    ]
+                }
+            ],
+            "projects":[
+                {
+                    "title": "2Fast2Scan",
+                    "descript":"Maximizing time to complete a full Port scan",
+                    "author":"xfaraday",
+                    "pathtodir": "/portscan/portscan.md",
+                    "date": "2-11-2022",
+                    "tags": [
+                        "recon",
+                        "bash"
+                    ]
+                }
+            ]
+        }
+    }
+}
