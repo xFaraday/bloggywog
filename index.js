@@ -1,10 +1,10 @@
 const showdown = require('showdown');
 const express = require('express');
 const path = require('path');
+const https = require('https')
 const fs = require('fs');
 const res = require('express/lib/response');
 const app = express();
-const port = 80;
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'sitefiles')));
@@ -12,8 +12,19 @@ app.use(express.static(path.join(__dirname, 'general')));
 app.use(express.static(path.join(__dirname, 'writeup')));
 app.use(express.static(path.join(__dirname, 'writeup/symfonos')));
 app.use(express.static(path.join(__dirname, 'writeup/Symfonos')));
+app.use(express.static(path.join(__dirname, 'writeup/blog')));
+app.use(express.static(path.join(__dirname, 'writeup/Blog')));
+app.use(express.static(path.join(__dirname, 'writeup/paper')));
+app.use(express.static(path.join(__dirname, 'general/CisoCTF')));
+app.use(express.static(path.join(__dirname, 'general/cisoctf')));
 app.use(express.static(path.join(__dirname, 'projects')));
 app.use(express.static(path.join(__dirname, 'views/pages')));
+
+var httpsOptions = {
+    key: fs.readFileSync(path.join(__dirname, 'xfaraday.key')),
+    cert: fs.readFileSync(path.join(__dirname, 'xfaraday.pem')) 
+};
+
 
 app.use(
 "/css",
@@ -122,8 +133,8 @@ app.get('/generalgen', (req, res) => {
             
             if (writeuptitlelist.includes(req.query.t)) {
                 var num = writeuptitlelist.indexOf(req.query.t);
-                if (fs.existsSync(path.join(__dirname, 'writeup/' + manifest.directory.topics.general[num].pathtodir))) {
-                    fs.readFile(path.join(__dirname, 'writeup/' + manifest.directory.topics.general[num].pathtodir), 'utf8', (err, data) => {
+                if (fs.existsSync(path.join(__dirname, 'general/' + manifest.directory.topics.general[num].pathtodir))) {
+                    fs.readFile(path.join(__dirname, 'general/' + manifest.directory.topics.general[num].pathtodir), 'utf8', (err, data) => {
                         if (err) {
                             throw err;
                         }
@@ -270,7 +281,9 @@ app.get('/projectgen', (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-});
+//app.listen(port, () => {
+//    console.log(`Listening on port ${port}`);
+//});
 
+var httpsServer = https.createServer(httpsOptions, app);
+httpsServer.listen(443);

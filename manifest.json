@@ -3,19 +3,44 @@
         "topics":{
             "general":[
                 {
-                    "title": "The_Struggle_of_resilent_Piplines",
-                    "descript":"My experience attempting to build reliable deployment pipelines for ESXi",
+                    "title": "CisoCTF",
+		    "descript":"Year long CTF, in hope of replacing traditional learning methods in Cybersecurity",
                     "author":"xfaraday",
-                    "pathtodir": "/pipelines/piplines.md",
-                    "date": "2-25-2022",
+                    "pathtodir": "/CisoCTF/cisoctf.md",
+                    "date": "9-1-2022",
                     "tags": [
-                        "VSphere",
-                        "pipelines",
-                        "DevOps"
+                        "CTF",
+                        "Education",
+                        "CSUSB",
+			"CISO"
                     ]
                 }
             ],
             "writeups":[
+		{
+			"title":"Paper",
+			"descript":"Walkthrough of Paper from HackTheBox",
+			"author":"xfaraday",
+			"pathtodir":"/paper/paper.md",
+			"date":"2-17-2022",
+			"tags": [
+				"HackTheBox",
+				"easy",
+				"Wordpress",
+				"RocketChat"
+			]	
+		},
+		{
+		    "title":"Blog",
+		    "descript":"Blog walkthrough from TryHackMe medium machine",
+		    "author":"xfaraday",
+		    "pathtodir": "/blog/blog.md",
+		    "date": "2-14-2022",
+		    "tags": [
+		        "TryHackMe",
+			"medium"
+		    ]
+		},
                 {
                     "title": "Symfonos",
                     "descript":"Symfonos walkthrough from vulnhub",
@@ -24,17 +49,6 @@
                     "date": "11-12-2021",
                     "tags": [
                         "vulnhub",
-                        "OSCP"
-                    ]
-                },
-                {
-                    "title": "yaboi",
-                    "descript":"yaboi walkthrough from hackthebox",
-                    "author":"xfaraday",
-                    "pathtodir": "/yaboi/yaboi.md",
-                    "date": "2-13-2022",
-                    "tags": [
-                        "HTB",
                         "OSCP"
                     ]
                 }
